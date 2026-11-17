@@ -1,0 +1,54 @@
+{
+  "name": "amazon-kinesis-queues-samples",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT-0",
+  "description": "Sample scenarios for queues in Amazon Kinesis Data Streams, deployed with the AWS CDK.",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "build": "tsc --noEmit",
+    "queue:create": "node --import tsx shared/src/create-queue.ts",
+    "queue:consume": "node --import tsx 1-first-queue/src/consume.ts",
+    "queue:delete": "node --import tsx shared/src/delete-queue.ts",
+    "cdk": "cdk",
+    "orders:produce": "node --import tsx shared/src/produce-orders.ts",
+    "orders:status": "node --import tsx 4-failures-and-dead-letters/scripts/status.ts",
+    "queue:configure": "node --import tsx shared/src/configure-queue.ts",
+    "queue:dead-letters": "node --import tsx shared/src/dead-letters.ts",
+    "orders:dead-letter-task": "node --import tsx 4-failures-and-dead-letters/scripts/run-dead-letter-task.ts",
+    "scale:status": "node --import tsx 3-scale-out/scripts/status.ts",
+    "orders:catalog": "node --import tsx 4-failures-and-dead-letters/scripts/catalog.ts",
+    "orders:warehouse": "node --import tsx 4-failures-and-dead-letters/scripts/warehouse.ts",
+    "delivery:status": "node --import tsx 2-at-least-once-delivery/scripts/status.ts",
+    "first-queue:status": "node --import tsx 1-first-queue/scripts/status.ts",
+    "fanout:status": "node --import tsx 5-consume-one-stream-many-ways/scripts/status.ts",
+    "fanout:trace": "node --import tsx 5-consume-one-stream-many-ways/scripts/trace.ts",
+    "migrate:plan": "node --import tsx 6-migrate-existing-consumer/scripts/plan-cutover.ts",
+    "migrate:relay:plan": "node --import tsx 6-migrate-existing-consumer/scripts/plan-relay-cutover.ts",
+    "migrate:status": "node --import tsx 6-migrate-existing-consumer/scripts/status.ts",
+    "migrate:verify": "node --import tsx 6-migrate-existing-consumer/scripts/verify.ts"
+  },
+  "dependencies": {
+    "@aws-sdk/client-cloudwatch": "3.1162.0",
+    "@aws-sdk/client-cloudwatch-logs": "3.1162.0",
+    "@aws-sdk/client-dynamodb": "3.1162.0",
+    "@aws-sdk/client-ecs": "3.1162.0",
+    "@aws-sdk/client-kinesis": "3.1171.0",
+    "@aws-sdk/client-sqs": "3.1162.0",
+    "@aws-sdk/client-ssm": "3.1162.0",
+    "@aws-sdk/credential-providers": "3.1162.0",
+    "@smithy/node-http-handler": "4.14.2",
+    "@smithy/signature-v4": "5.7.5",
+    "aws-cdk-lib": "2.275.0",
+    "constructs": "10.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "aws-cdk": "2.1147.0",
+    "esbuild": "0.28.2",
+    "tsx": "4.23.15",
+    "typescript": "~5.9.3"
+  }
+}

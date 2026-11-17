@@ -1,0 +1,5 @@
+target/
+.git/
+.aws/
+.env*
+.DS_Store
