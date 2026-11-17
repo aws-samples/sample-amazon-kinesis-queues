@@ -15,7 +15,7 @@
     <kcl.version>3.5.4</kcl.version>
     <!-- Keep the AWS SDK modules aligned with this KCL release. -->
     <aws.sdk.version>2.41.21</aws.sdk.version>
-    <jackson.version>2.20.1</jackson.version>
+    <jackson.version>2.21.7</jackson.version>
   </properties>
 
   <dependencyManagement>
